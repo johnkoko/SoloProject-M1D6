@@ -363,30 +363,87 @@ function onlyTheTitles(){
 }
 /* EXERCISE 15
    Write a function called onlyInThisMillennium which returns only the movies produced in this millennium from the provided movies array.
-*/
+*/ writeHeader("EXERCISE 15")
 
+function onlyInThisMillennium(){
+    let result = []
+    for(let i = 0; i < movies.length; i++){
+        let movie = movies[i]
+        if (parseInt(movie.Year) > 1999)
+            result.push(movie)
+    }
+
+    return result
+}
 /* EXERCISE 16 
     Write a function called getMovieById which receives an id as a parameter and returns the movie with the given id from the provided movies array.
-*/
+*/ writeHeader("EXERCISE 16")
+
+function getMovieById(id) {
+    for(let i = 0; i < movies.length; i++){
+        if (movies[i].imdbID === id)
+            return movies[i]
+    }
+
+    return {}
+}
 
 /* EXERCISE 17
     Write a function called sumAllTheYears which returns the sum of all the years in which the movies in the provided movies array have been produced.
-*/
+*/ writeHeader("EXERCISE 17")
+
+function sumAllTheYears () {
+    let result = 0
+    for(let i = 0; i < movies.length; i++){
+        result += parseInt(movies[i].Year)
+    }
+    return result
+}
 
 /* EXERCISE 18
     Write a function called searchByTitle which receives a string as a parameter and returns all the movies in the provided movies array which contain that string in the title.
-*/
+*/ writeHeader("EXERCISE 18")
+
+function searchByTitle(keyword) {
+    let result = []
+    for(let i = 0; i < movies.length; i++){
+        if (movies[i].Title.indexOf(keyword) !== -1)
+            result.push(movies[i])
+    }
+}
 
 /* EXERCISE 19
     Write a function called searchAndDivide which receives a string as a parameter and returns an object;
     this object should contain an array called match, made by all the movies from the provided movies array which contain the given string in the title,
     and another array unmatch with all the remaining ones.
-*/
+*/ writeHeader("EXERCISE 19")
 
+function searchAndDivide(anyWord){
+    let result = {
+        match: [],
+        unmatch: []
+    }
+    for(let i = 0; i < movies.length; i++){
+        if (movies[i].Title.indexOf(keyword) !== -1)
+            result.match.push(movies[i])
+        else
+            result.unmatch.push(movies[i])
+    }
+    return result
+}   
 /* EXERCISE 20
    Write a function called "removeIndex" which receives a number as a parameter and returns the provided movies array without the element in the given position.
-*/
+*/ writeHeader("EXERCISE 20")
 
+function removeIndex(number){
+    let result =[]
+    for(let i = 0; i < movies.length; i++){
+        if (number === i)
+            continue
+        
+        result.push(movies[i])
+    }
+}
 // [EXTRAS] JS Advanced
 
 /* EXERCISE 21
