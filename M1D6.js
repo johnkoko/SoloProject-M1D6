@@ -180,10 +180,14 @@ function rollTheDices(numberOfDices){
 */writeHeader("EXERCISE 9")
 
 function howManyDays(chosenDate) {
-    let today = new Date()
-    let daysPassed = today - chosenDate
-    return daysPassed / (1000 * 60 * 60 * 24)
-} console.log(howManyDays(365))
+    let today = Date.now()
+    let daysPassed = Date.parse(chosenDate)
+    return Math.floor((today - daysPassed) / (1000 * 60 * 60 * 24))
+   
+} 
+let date = howManyDays("16 Jun 1991")
+console.log(date)
+//console.log(howManyDays(365))
 /* EXERCISE 10
    Write a function called isTodayMyBirthday which should return true if today's your birthday, false otherwise.
 */ writeHeader("EXERCISE 10")
