@@ -40,18 +40,36 @@ console.log(random)
     Create a variable called me and assign to it an object containing the following information: name = your name, surname = your surname, age = your age.
 */
 writeHeader("EXERCISE D")
+
+let me = {
+    name: "John",
+    surname: "Nkor",
+    age: 30
+}
+console.log(me)
+
 /* EXERCISE E
     Write a piece of code for programmatically removing the age property from the previously create object.
 */
+writeHeader("EXERCISE E")
+delete me.age
+
+console.log(me)
 
 /* EXERCISE F
    Write a piece of code for programmatically adding to the me object you defined before an array called skills, containing the programming languages you know right now.
 */
+writeHeader("EXERCISE F")
+me.skills = ["JavaScript", "Python", "C"]
 
+console.log(me)
 /* EXERCISE G
    Write a piece of code for programmatically removing the last skill from the skills array inside the me object.
 */
+writeHeader("EXERCISE G")
+me.skills.pop()
 
+console.log(me)
 // JS Functions
 /* EXERCISE 1
     Write a function called dice; it should randomize an integer number between 1 and 6.
