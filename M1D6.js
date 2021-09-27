@@ -109,19 +109,44 @@ console.log(splitMe("I love coding"));
     Write a function called deleteOne which receives a string and a boolean as parameters.
     If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
+writeHeader("EXERCISE 4")
 
+function deleteOne(str, last) {
+    if (last) {
+        return str.substring(1)
+    } else {
+        return str.substring(0, str.length - 1)
+    }
+} console.log(deleteOne("one", false))
 /* EXERCISE 5
    Write a function called onlyLetters which receives a string as a parameter and returns it removing all the digits.
    Ex.: onlyLetters("I have 4 dogs") => returns "I have  dogs"
-*/
+*/writeHeader("EXERCISE 5")
 
+function onlyLetters(str) {
+    let result = "I have 4 dogs"
+    for(let i = 0; 1 < str.length; i ++){
+        let isALetter = str[i]
+        if (isNaN(isALetter))
+        result += isALetter
+    } 
+    return result
+} //console.log(onlyLetters());
 /* EXERCISE 6
    Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
-*/
+*/writeHeader("EXERCISE 6")
 
+function isThisAnEmail(email) {
+    return (email.indexOf("@") > 0 && email.indexOf(".") > 0)
+}
 /* EXERCISE 7
    Write a function called whatDayIsIt that should return the current day of the week.
-*/
+*/writeHeader("EXERCISE 7")
+
+function whatDayIsIt() {
+    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    return days[(new Date()).getDay()]
+} console.log(whatDayIsIt())
 
 /* EXERCISE 8
     Write a function called rollTheDices which receives a number as a parameter.
@@ -132,7 +157,21 @@ console.log(splitMe("I love coding"));
         sum: 10
         values: [3, 3, 4]
     }
-*/
+*/writeHeader("EXERCISE 8")
+function rollTheDices(numberOfDices){
+    let result = {
+        sum: 0,
+        values: []
+    }
+
+    for (let i = 0; i < numberOfDices; i ++){
+        let diceRoll = dice()
+        result.sum += diceRoll
+        result.values.push(diceRoll)
+    }
+
+    return result
+} console.log(rollTheDices(3,6))
 
 /* EXERCISE 9
    Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
