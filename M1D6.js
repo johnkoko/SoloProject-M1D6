@@ -124,21 +124,23 @@ function deleteOne(str, last) {
 */writeHeader("EXERCISE 5")
 
 function onlyLetters(str) {
-    let result = "I have 4 dogs"
+    let result = ""
     for(let i = 0; 1 < str.length; i ++){
         let isALetter = str[i]
         if (isNaN(isALetter))
         result += isALetter
     } 
     return result
-} //console.log(onlyLetters());
+} //console.log(onlyLetters("I have 4 dogs"));
+
 /* EXERCISE 6
    Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 */writeHeader("EXERCISE 6")
 
 function isThisAnEmail(email) {
     return (email.indexOf("@") > 0 && email.indexOf(".") > 0)
-}
+} console.log(isThisAnEmail("nkorjohn@gmail.com", true))
+
 /* EXERCISE 7
    Write a function called whatDayIsIt that should return the current day of the week.
 */writeHeader("EXERCISE 7")
@@ -175,19 +177,31 @@ function rollTheDices(numberOfDices){
 
 /* EXERCISE 9
    Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
-*/
+*/writeHeader("EXERCISE 9")
 
+function howManyDays(chosenDate) {
+    let today = new Date()
+    let daysPassed = today - chosenDate
+    return daysPassed / (1000 * 60 * 60 * 24)
+} console.log(howManyDays(365))
 /* EXERCISE 10
    Write a function called isTodayMyBirthday which should return true if today's your birthday, false otherwise.
-*/
+*/ writeHeader("EXERCISE 10")
 
+function isTodayMyBirthday() {
+    let today = new Date()
+    let birthday = new Date(1991, 2, 27) 
+    return (today.getDay() === birthday.getDay() && today.getMonth() === birthday.getMonth())
+} console.log(isTodayMyBirthday())
+
+writeHeader("JS Arrays & Objects")
 // JS Arrays & Objects
 // NOTE: the movies array used in some exercises is defined at the end of this file
 
 /* EXERCISE 11
    Write a function called deleteProp which receives an object and a string as parameters,
    and returns the given object after deleting its property named as the given string.
-*/
+*/ writeHeader("EXERCISE 10")
 
 /* EXERCISE 12
     Write a function called oldestMovie which finds the oldest movie in the provided movies array.
